@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Under Construction — Next Generation Robotics</title>
+    <meta
+      name="description"
+      content="Under construction. Building the next generation of robotics technology."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grid" aria-hidden="true"></div>
+    <div class="scan" aria-hidden="true"></div>
+
+    <main class="stage">
+      <p class="status">SYSTEM STATUS // OFFLINE FOR BUILD</p>
+
+      <svg class="mark" viewBox="0 0 200 200" role="img" aria-label="Robotics mark">
+        <defs>
+          <linearGradient id="steel" x1="16%" y1="6%" x2="88%" y2="94%">
+            <stop offset="0%" stop-color="#d7e4ee" />
+            <stop offset="100%" stop-color="#6d8ea8" />
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(168, 190, 208, 0.38)" stroke-width="1.1" />
+        <path
+          d="M100 12 v10 M188 100 h-10 M100 188 v-10 M12 100 h10"
+          fill="none"
+          stroke="rgba(168, 190, 208, 0.55)"
+          stroke-width="1.35"
+          stroke-linecap="square"
+        />
+        <circle class="orbit" cx="100" cy="100" r="76" />
+        <polygon
+          points="100,38 151,68 151,132 100,162 49,132 49,68"
+          fill="rgba(12, 24, 38, 0.55)"
+          stroke="url(#steel)"
+          stroke-width="2.1"
+        />
+        <!-- pedestal -->
+        <rect x="86" y="136" width="28" height="10" fill="url(#steel)" />
+        <rect x="94" y="118" width="12" height="18" fill="url(#steel)" />
+        <!-- shoulder -->
+        <circle cx="100" cy="112" r="11" fill="#0a121c" stroke="url(#steel)" stroke-width="2.4" />
+        <circle cx="100" cy="112" r="3.2" fill="url(#steel)" />
+        <!-- upper arm -->
+        <path d="M93 104 L72 72 L86 64 L107 96 Z" fill="url(#steel)" />
+        <!-- elbow -->
+        <circle cx="78" cy="68" r="8.5" fill="#0a121c" stroke="url(#steel)" stroke-width="2.2" />
+        <circle cx="78" cy="68" r="2.6" fill="url(#steel)" />
+        <!-- forearm -->
+        <path d="M82 61 L126 46 L132 62 L88 77 Z" fill="url(#steel)" />
+        <!-- wrist -->
+        <circle cx="130" cy="54" r="7" fill="#0a121c" stroke="url(#steel)" stroke-width="2" />
+        <!-- tool -->
+        <path d="M136 50 h16 v8 h-16 z" fill="url(#steel)" />
+        <path d="M152 46 h6 v16 h-6 z" fill="url(#steel)" />
+      </svg>
+
+      <h1>Under construction</h1>
+      <p class="tagline">Building next generation of robotics technology</p>
+    </main>
+  </body>
+</html>
