@@ -1,0 +1,65 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="300"
+  height="300"
+  viewBox="0 0 300 300"
+  role="img"
+  aria-label="Percere robotics mark"
+>
+  <defs>
+    <linearGradient id="steel" x1="16%" y1="6%" x2="88%" y2="94%">
+      <stop offset="0%" stop-color="#dfeaf3" />
+      <stop offset="100%" stop-color="#6d8ea8" />
+    </linearGradient>
+    <radialGradient id="tile" cx="50%" cy="18%" r="85%">
+      <stop offset="0%" stop-color="#12233a" />
+      <stop offset="100%" stop-color="#05080f" />
+    </radialGradient>
+  </defs>
+
+  <rect width="300" height="300" fill="url(#tile)" />
+
+  <g transform="translate(150,150) scale(1.6) translate(-100,-100)">
+    <polygon
+      points="100,38 151,68 151,132 100,162 49,132 49,68"
+      fill="rgba(12, 24, 38, 0.55)"
+      stroke="url(#steel)"
+      stroke-width="2.4"
+    />
+
+    <!-- Every link stops ~0.8 short of the neighbouring joint's outer edge, so
+         the bearings read as separate machined parts rather than merged plates. -->
+
+    <!-- pedestal -->
+    <rect x="86" y="136" width="28" height="10" fill="url(#steel)" />
+    <rect x="94" y="125.1" width="12" height="10.9" fill="url(#steel)" />
+
+    <!-- shoulder -->
+    <circle cx="100" cy="112" r="11" fill="#0a121c" stroke="url(#steel)" stroke-width="2.6" />
+    <circle cx="100" cy="112" r="3.2" fill="url(#steel)" />
+
+    <!-- upper arm -->
+    <polygon points="86.99,103.86 101.30,96.70 89.86,73.82 75.55,80.98" fill="url(#steel)" />
+
+    <!-- elbow -->
+    <circle cx="78" cy="68" r="8.5" fill="#0a121c" stroke="url(#steel)" stroke-width="2.4" />
+    <circle cx="78" cy="68" r="2.6" fill="url(#steel)" />
+
+    <!-- forearm -->
+    <polygon points="86.06,57.54 119.33,48.58 123.49,64.04 90.22,73.00" fill="url(#steel)" />
+
+    <!-- wrist -->
+    <circle cx="130" cy="54" r="7" fill="#0a121c" stroke="url(#steel)" stroke-width="2.2" />
+
+    <!-- Parallel jaw gripper on an extended coupler that clears the wrist and
+         forearm. Jaws taper outward but keep parallel inner faces. -->
+    <g transform="translate(130,54) rotate(101)">
+      <rect x="8.9" y="-4" width="10.1" height="8" fill="url(#steel)" />
+      <polygon points="19,-5 27,-12 27,12 19,5" fill="url(#steel)" />
+      <polygon points="27,-12 42,-8.5 42,-4.5 27,-4.5" fill="url(#steel)" />
+      <polygon points="27,12 42,8.5 42,4.5 27,4.5" fill="url(#steel)" />
+      <rect x="35" y="-4.5" width="6" height="2.2" fill="#0a121c" opacity="0.75" />
+      <rect x="35" y="2.3" width="6" height="2.2" fill="#0a121c" opacity="0.75" />
+    </g>
+  </g>
+</svg>

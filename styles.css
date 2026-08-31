@@ -4,6 +4,7 @@
   --muted: #7aa0b8;
   --cyan: #5ce1ff;
   --blue: #2d7dff;
+  --horizon-h: clamp(150px, 23vw, 320px);
 }
 
 *,
@@ -26,7 +27,7 @@ body {
     radial-gradient(800px 500px at 80% 110%, rgba(92, 225, 255, 0.12), transparent 50%),
     var(--bg);
   font-family: "Share Tech Mono", ui-monospace, monospace;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .grid {
@@ -53,6 +54,7 @@ body {
   );
   animation: sweep 6.5s linear infinite;
   pointer-events: none;
+  z-index: 3;
 }
 
 @keyframes sweep {
@@ -64,23 +66,79 @@ body {
   }
 }
 
+/* The robot lineup from the brand banner, surfacing out of the dark at the
+   foot of the page. */
+.horizon {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--horizon-h);
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 42%, black 100%);
+}
+
+.horizon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Biased right of centre so narrow viewports crop into the brain and the
+     robots rather than the empty factory depth on the left. */
+  object-position: 62% 50%;
+  opacity: 0.85;
+}
+
 .stage {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 2rem clamp(1.1rem, 5vw, 2rem) calc(var(--horizon-h) + 2rem);
   text-align: center;
 }
 
+/* Centred flex items size to their content, so without this the headline
+   refuses to wrap and drags the layout wider than the viewport. */
+.stage > * {
+  max-width: 100%;
+}
+
 .status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   margin: 0 0 1.5rem;
   letter-spacing: 0.28em;
-  font-size: 0.72rem;
+  text-transform: uppercase;
+  /* Scales down on narrow screens so the full status string stays on one
+     line rather than breaking mid-phrase. */
+  font-size: clamp(0.58rem, 2.2vw, 0.72rem);
   color: var(--cyan);
+}
+
+.status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
 }
 
 .mark {
@@ -99,6 +157,14 @@ body {
   animation: spin 28s linear infinite;
 }
 
+.orbit--outer {
+  stroke: rgba(92, 225, 255, 0.24);
+  stroke-width: 0.9;
+  stroke-dasharray: 14 300;
+  animation-duration: 44s;
+  animation-direction: reverse;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -106,26 +172,36 @@ body {
 }
 
 h1 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.9rem;
   font-family: Orbitron, sans-serif;
   font-weight: 700;
-  font-size: clamp(1.8rem, 5vw, 3.4rem);
-  letter-spacing: 0.06em;
+  font-size: clamp(1.5rem, 6.4vw, 3.5rem);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.lede {
+  margin: 0 0 1.1rem;
+  width: 40rem;
+  font-size: clamp(1.02rem, 2.6vw, 1.35rem);
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  color: #bcd9ea;
 }
 
 .tagline {
   margin: 0;
-  max-width: 28rem;
+  width: 30rem;
   color: var(--muted);
-  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-size: clamp(0.9rem, 2.1vw, 1.05rem);
   line-height: 1.6;
   letter-spacing: 0.04em;
 }
-
 @media (prefers-reduced-motion: reduce) {
   .scan,
-  .orbit {
+  .orbit,
+  .status::before {
     animation: none;
   }
 }

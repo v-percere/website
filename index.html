@@ -3,11 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Under Construction — Next Generation Robotics</title>
+    <title>Percere AI — Under construction</title>
     <meta
       name="description"
-      content="Under construction. Building the next generation of robotics technology."
+      content="Robots can see. We’re building what comes next. Next-generation robotic intelligence for the physical world."
     />
+    <meta name="theme-color" content="#05080f" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Percere AI" />
+    <meta
+      property="og:description"
+      content="Robots can see. We’re building what comes next. Next-generation robotic intelligence for the physical world."
+    />
+    <meta property="og:image" content="assets/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,15 +33,16 @@
     <div class="scan" aria-hidden="true"></div>
 
     <main class="stage">
-      <p class="status">SYSTEM STATUS // OFFLINE FOR BUILD</p>
+      <p class="status">System status // Stealth mode</p>
 
-      <svg class="mark" viewBox="0 0 200 200" role="img" aria-label="Robotics mark">
+      <svg class="mark" viewBox="0 0 200 200" role="img" aria-label="Percere robotics mark">
         <defs>
           <linearGradient id="steel" x1="16%" y1="6%" x2="88%" y2="94%">
             <stop offset="0%" stop-color="#d7e4ee" />
             <stop offset="100%" stop-color="#6d8ea8" />
           </linearGradient>
         </defs>
+
         <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(168, 190, 208, 0.38)" stroke-width="1.1" />
         <path
           d="M100 12 v10 M188 100 h-10 M100 188 v-10 M12 100 h10"
@@ -39,34 +52,54 @@
           stroke-linecap="square"
         />
         <circle class="orbit" cx="100" cy="100" r="76" />
+        <circle class="orbit orbit--outer" cx="100" cy="100" r="83" />
+
         <polygon
           points="100,38 151,68 151,132 100,162 49,132 49,68"
           fill="rgba(12, 24, 38, 0.55)"
           stroke="url(#steel)"
           stroke-width="2.1"
         />
+
         <!-- pedestal -->
         <rect x="86" y="136" width="28" height="10" fill="url(#steel)" />
-        <rect x="94" y="118" width="12" height="18" fill="url(#steel)" />
+        <rect x="94" y="125.1" width="12" height="10.9" fill="url(#steel)" />
+
         <!-- shoulder -->
         <circle cx="100" cy="112" r="11" fill="#0a121c" stroke="url(#steel)" stroke-width="2.4" />
         <circle cx="100" cy="112" r="3.2" fill="url(#steel)" />
+
         <!-- upper arm -->
-        <path d="M93 104 L72 72 L86 64 L107 96 Z" fill="url(#steel)" />
+        <polygon points="86.99,103.86 101.30,96.70 89.86,73.82 75.55,80.98" fill="url(#steel)" />
+
         <!-- elbow -->
         <circle cx="78" cy="68" r="8.5" fill="#0a121c" stroke="url(#steel)" stroke-width="2.2" />
         <circle cx="78" cy="68" r="2.6" fill="url(#steel)" />
+
         <!-- forearm -->
-        <path d="M82 61 L126 46 L132 62 L88 77 Z" fill="url(#steel)" />
+        <polygon points="86.06,57.54 119.33,48.58 123.49,64.04 90.22,73.00" fill="url(#steel)" />
+
         <!-- wrist -->
         <circle cx="130" cy="54" r="7" fill="#0a121c" stroke="url(#steel)" stroke-width="2" />
-        <!-- tool -->
-        <path d="M136 50 h16 v8 h-16 z" fill="url(#steel)" />
-        <path d="M152 46 h6 v16 h-6 z" fill="url(#steel)" />
+
+        <!-- parallel jaw gripper -->
+        <g transform="translate(130,54) rotate(101)">
+          <rect x="8.9" y="-4" width="10.1" height="8" fill="url(#steel)" />
+          <polygon points="19,-5 27,-12 27,12 19,5" fill="url(#steel)" />
+          <polygon points="27,-12 42,-8.5 42,-4.5 27,-4.5" fill="url(#steel)" />
+          <polygon points="27,12 42,8.5 42,4.5 27,4.5" fill="url(#steel)" />
+          <rect x="35" y="-4.5" width="6" height="2.2" fill="#0a121c" opacity="0.75" />
+          <rect x="35" y="2.3" width="6" height="2.2" fill="#0a121c" opacity="0.75" />
+        </g>
       </svg>
 
       <h1>Under construction</h1>
-      <p class="tagline">Building next generation of robotics technology</p>
+      <p class="lede">Robots can see. We’re building what comes next.</p>
+      <p class="tagline">Next-generation robotic intelligence for the physical world.</p>
     </main>
+
+    <div class="horizon" aria-hidden="true">
+      <img src="assets/horizon.jpg" alt="" />
+    </div>
   </body>
 </html>
