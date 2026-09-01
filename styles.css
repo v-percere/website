@@ -182,22 +182,17 @@ h1 {
 }
 
 .lede {
-  margin: 0 0 1.1rem;
-  width: 40rem;
+  margin: 0;
+  width: 58rem;
   font-size: clamp(1.02rem, 2.6vw, 1.35rem);
   line-height: 1.5;
   letter-spacing: 0.05em;
   color: #bcd9ea;
+  /* Keeps "AI." from being orphaned on its own line when the sentence does
+     have to wrap on narrower viewports. */
+  text-wrap: balance;
 }
 
-.tagline {
-  margin: 0;
-  width: 30rem;
-  color: var(--muted);
-  font-size: clamp(0.9rem, 2.1vw, 1.05rem);
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-}
 @media (prefers-reduced-motion: reduce) {
   .scan,
   .orbit,
