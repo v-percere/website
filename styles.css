@@ -74,17 +74,21 @@ body {
   right: 0;
   bottom: 0;
   height: var(--horizon-h);
+  overflow: hidden;
   pointer-events: none;
   mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 42%, black 100%);
 }
 
 .horizon img {
-  width: 100%;
+  /* Pin the brain (~51.3% into the 6:1 strip) to the same vertical
+     centerline as the mark. object-position percentages cannot do that
+     independently of viewport width. */
   height: 100%;
-  object-fit: cover;
-  /* Biased right of centre so narrow viewports crop into the brain and the
-     robots rather than the empty factory depth on the left. */
-  object-position: 62% 50%;
+  width: auto;
+  max-width: none;
+  position: relative;
+  left: 50%;
+  transform: translateX(-51.3%);
   opacity: 0.85;
 }
 
