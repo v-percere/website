@@ -80,15 +80,15 @@ body {
 }
 
 .horizon img {
-  /* Pin the brain (~51.3% into the 6:1 strip) to the same vertical
-     centerline as the mark. object-position percentages cannot do that
-     independently of viewport width. */
+  /* Pin the hemisphere cleft (~54.25% into the 6:1 strip) to the same
+     vertical axis as the mark. Bright-pixel centroid was too far left
+     because the blue lobe and tendrils outweigh the orange side. */
   height: 100%;
   width: auto;
   max-width: none;
   position: relative;
   left: 50%;
-  transform: translateX(-51.3%);
+  transform: translateX(-54.25%);
   opacity: 0.85;
 }
 
